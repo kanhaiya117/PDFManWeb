@@ -1,0 +1,343 @@
+export interface PDFTool {
+  id: string;
+  title: string;
+  description: string;
+  category: 'read' | 'organize' | 'edit-sign' | 'protect' | 'convert' | 'ocr' | 'analyze' | 'government' | 'banking';
+  icon: string;
+  color: string;
+  badge?: string;
+  popular?: boolean;
+}
+
+export const PDF_CATEGORIES = [
+  { id: 'all', label: 'All Tools' },
+  { id: 'read', label: 'Read & View' },
+  { id: 'edit-sign', label: 'Edit & Sign' },
+  { id: 'organize', label: 'Organize' },
+  { id: 'protect', label: 'Protect & Redact' },
+  { id: 'convert', label: 'Convert' },
+  { id: 'ocr', label: 'Scan & OCR' },
+  { id: 'analyze', label: 'Analyze & AI' },
+  { id: 'government', label: 'Government' },
+  { id: 'banking', label: 'Banking & KYC' },
+] as const;
+
+export const PDF_TOOLS: PDFTool[] = [
+  // Read & View (P0)
+  {
+    id: 'pdf-reader',
+    title: 'PDF Reader',
+    description: 'Blazing fast, zero-telemetry local PDF viewer with virtualized rendering and dark mode support.',
+    category: 'read',
+    icon: 'Eye',
+    color: 'from-indigo-500 to-blue-600',
+    popular: true,
+    badge: 'Instant',
+  },
+  {
+    id: 'search-pdf',
+    title: 'Search PDF',
+    description: 'Find text, phrases, numbers, and clauses across 500+ pages with highlighted keyword matches.',
+    category: 'read',
+    icon: 'Search',
+    color: 'from-blue-600 to-indigo-700',
+  },
+  {
+    id: 'presentation-mode',
+    title: 'Presentation Mode',
+    description: 'Distraction-free fullscreen presentation display for slides, pitch decks, and legal briefs.',
+    category: 'read',
+    icon: 'Monitor',
+    color: 'from-sky-500 to-indigo-600',
+  },
+
+  // Edit & Sign (P1)
+  {
+    id: 'edit-pdf',
+    title: 'Edit PDF',
+    description: 'Add text, shapes, notes, callouts, arrows, and freehand annotations directly to your document.',
+    category: 'edit-sign',
+    icon: 'PenTool',
+    color: 'from-indigo-600 to-violet-600',
+    popular: true,
+    badge: 'Popular',
+  },
+  {
+    id: 'sign-pdf',
+    title: 'Sign PDF',
+    description: 'Draw, type, or upload your signature. Place signature, initials, date, and name fields cleanly.',
+    category: 'edit-sign',
+    icon: 'Signature',
+    color: 'from-emerald-500 to-teal-600',
+    popular: true,
+    badge: '100% Private',
+  },
+  {
+    id: 'pdf-forms',
+    title: 'Fill & Design Forms',
+    description: 'Fill interactive PDF forms, checkboxes, radio buttons, dropdowns, and date fields.',
+    category: 'edit-sign',
+    icon: 'CheckSquare',
+    color: 'from-teal-500 to-cyan-600',
+    badge: 'Interactive',
+  },
+  {
+    id: 'stamp-pdf',
+    title: 'Stamp PDF',
+    description: 'Apply authentic stamps: APPROVED, CONFIDENTIAL, DRAFT, PAID, VERIFIED, or custom text stamps.',
+    category: 'edit-sign',
+    icon: 'Stamp',
+    color: 'from-violet-600 to-purple-700',
+    badge: 'Official',
+  },
+
+  // Organize (P1)
+  {
+    id: 'merge-pdf',
+    title: 'Merge PDF',
+    description: 'Combine multiple PDF files into one single organized document with drag-and-drop reordering.',
+    category: 'organize',
+    icon: 'Layers',
+    color: 'from-indigo-500 to-sky-600',
+    popular: true,
+    badge: 'Popular',
+  },
+  {
+    id: 'split-pdf',
+    title: 'Split PDF',
+    description: 'Extract individual pages, split by page ranges, or separate every page into individual files.',
+    category: 'organize',
+    icon: 'Split',
+    color: 'from-amber-500 to-orange-600',
+    popular: true,
+  },
+  {
+    id: 'organize-pdf',
+    title: 'Organize Pages',
+    description: 'Visual page manager: drag to reorder, duplicate, delete, rotate, or insert blank pages.',
+    category: 'organize',
+    icon: 'Grid',
+    color: 'from-blue-500 to-cyan-600',
+    badge: 'Essential',
+  },
+  {
+    id: 'rotate-pdf',
+    title: 'Rotate PDF',
+    description: 'Rotate individual pages or the entire document clockwise and counter-clockwise.',
+    category: 'organize',
+    icon: 'RotateCw',
+    color: 'from-cyan-500 to-teal-600',
+  },
+  {
+    id: 'delete-pages',
+    title: 'Delete Pages',
+    description: 'Remove unwanted, blank, or sensitive pages permanently before distribution.',
+    category: 'organize',
+    icon: 'Trash2',
+    color: 'from-slate-600 to-slate-800',
+  },
+  {
+    id: 'extract-pages',
+    title: 'Extract Pages',
+    description: 'Extract specific pages or page selections into a brand-new, clean PDF file.',
+    category: 'organize',
+    icon: 'FileOutput',
+    color: 'from-teal-600 to-emerald-600',
+  },
+
+  // Protect & Redact (P2)
+  {
+    id: 'protect-pdf',
+    title: 'Password Protect',
+    description: 'Encrypt your PDF with standard AES encryption to prevent unauthorized opening or editing.',
+    category: 'protect',
+    icon: 'Lock',
+    color: 'from-indigo-600 to-slate-800',
+    badge: 'AES-256',
+  },
+  {
+    id: 'unlock-pdf',
+    title: 'Unlock PDF',
+    description: 'Remove PDF security and password protection for authorized users without quality loss.',
+    category: 'protect',
+    icon: 'Unlock',
+    color: 'from-amber-500 to-amber-700',
+  },
+  {
+    id: 'redact-pdf',
+    title: 'True Redaction',
+    description: 'Permanently remove underlying text and vector objects—not just a cosmetic black rectangle.',
+    category: 'protect',
+    icon: 'EyeOff',
+    color: 'from-slate-800 to-zinc-900',
+    popular: true,
+    badge: 'True Sanitize',
+  },
+  {
+    id: 'watermark-pdf',
+    title: 'Watermark',
+    description: 'Add diagonal or centered text or logo watermark with opacity, position, and page range controls.',
+    category: 'protect',
+    icon: 'Droplets',
+    color: 'from-sky-500 to-blue-700',
+  },
+  {
+    id: 'remove-metadata',
+    title: 'Remove Metadata',
+    description: 'Strip hidden author names, creation software, GPS data, and edit history for complete privacy.',
+    category: 'protect',
+    icon: 'ShieldOff',
+    color: 'from-emerald-600 to-teal-700',
+  },
+  {
+    id: 'compress-pdf',
+    title: 'Compress PDF',
+    description: 'Reduce file size while preserving crisp vector text and image clarity with customizable profiles.',
+    category: 'protect',
+    icon: 'Minimize2',
+    color: 'from-emerald-500 to-cyan-600',
+    popular: true,
+    badge: 'Popular',
+  },
+  {
+    id: 'flatten-pdf',
+    title: 'Flatten PDF',
+    description: 'Lock annotations, signatures, and form fields permanently into unalterable document content.',
+    category: 'protect',
+    icon: 'FileDown',
+    color: 'from-blue-600 to-indigo-800',
+  },
+  {
+    id: 'pdf-a',
+    title: 'PDF/A Preservation',
+    description: 'Convert document to ISO-standard PDF/A for long-term government and legal archival.',
+    category: 'protect',
+    icon: 'Archive',
+    color: 'from-zinc-700 to-slate-900',
+    badge: 'ISO Standard',
+  },
+
+  // Convert (P3)
+  {
+    id: 'pdf-to-word',
+    title: 'PDF to Word',
+    description: 'Convert PDF files into editable Microsoft Word DOCX documents with high typography fidelity.',
+    category: 'convert',
+    icon: 'FileType2',
+    color: 'from-blue-600 to-indigo-600',
+    popular: true,
+  },
+  {
+    id: 'pdf-to-excel',
+    title: 'PDF to Excel',
+    description: 'Extract tables and structured financial data from PDFs into Microsoft Excel XLSX spreadsheets.',
+    category: 'convert',
+    icon: 'FileSpreadsheet',
+    color: 'from-emerald-600 to-teal-700',
+  },
+  {
+    id: 'pdf-to-jpg',
+    title: 'PDF to JPG / PNG',
+    description: 'Export all PDF pages or selected illustrations as high-res JPG or PNG images.',
+    category: 'convert',
+    icon: 'FileImage',
+    color: 'from-amber-500 to-yellow-600',
+  },
+  {
+    id: 'jpg-to-pdf',
+    title: 'Images to PDF',
+    description: 'Convert JPG, PNG, WEBP, and HEIC images into a single polished, multi-page PDF.',
+    category: 'convert',
+    icon: 'Image',
+    color: 'from-orange-500 to-amber-600',
+  },
+  {
+    id: 'word-to-pdf',
+    title: 'Word to PDF',
+    description: 'Convert Microsoft Word documents (DOC, DOCX) into clean, standard PDF documents.',
+    category: 'convert',
+    icon: 'FileText',
+    color: 'from-blue-600 to-blue-800',
+  },
+  {
+    id: 'excel-to-pdf',
+    title: 'Excel to PDF',
+    description: 'Convert spreadsheets into printer-ready, formatted PDF reports.',
+    category: 'convert',
+    icon: 'FileSpreadsheet',
+    color: 'from-teal-600 to-green-700',
+  },
+
+  // Scan & OCR
+  {
+    id: 'ocr-pdf',
+    title: 'OCR PDF',
+    description: 'Transform scanned PDFs and photos into searchable, copyable text. Supports English, Hindi & Gujarati.',
+    category: 'ocr',
+    icon: 'ScanLine',
+    color: 'from-teal-500 to-cyan-600',
+    badge: 'Multi-lingual',
+    popular: true,
+  },
+  {
+    id: 'extract-text',
+    title: 'Extract Text',
+    description: 'Extract raw text, paragraphs, and tables without formatting for data pipelines and reports.',
+    category: 'ocr',
+    icon: 'FileCode',
+    color: 'from-cyan-600 to-blue-700',
+  },
+
+  // Analyze & AI (P4)
+  {
+    id: 'compare-pdf',
+    title: 'Compare PDF',
+    description: 'Side-by-side or visual overlay diff between two document revisions to spot changes instantly.',
+    category: 'analyze',
+    icon: 'GitCompare',
+    color: 'from-purple-600 to-indigo-600',
+  },
+  {
+    id: 'ask-pdf',
+    title: 'Ask PDF Copilot',
+    description: 'Ask questions, clarify legal clauses, and extract insights with privacy-first AI.',
+    category: 'analyze',
+    icon: 'Sparkles',
+    color: 'from-violet-500 to-fuchsia-600',
+    popular: true,
+    badge: 'AI Copilot',
+  },
+  {
+    id: 'summarize-pdf',
+    title: 'Document Summary',
+    description: 'Generate concise executive summaries, key bullet takeaways, and action items in seconds.',
+    category: 'analyze',
+    icon: 'FileQuestion',
+    color: 'from-fuchsia-600 to-pink-600',
+    badge: 'AI Powered',
+  },
+
+  // Specialized Government Mode
+  {
+    id: 'government-mode',
+    title: 'Government PDF Tools',
+    description: 'Purpose-built for public servants and citizens: form filling, official stamps, redaction, and PDF/A.',
+    category: 'government',
+    icon: 'Landmark',
+    color: 'from-slate-700 to-indigo-900',
+    badge: 'Govt Mode',
+    popular: true,
+  },
+
+  // Specialized Banking Mode
+  {
+    id: 'banking-mode',
+    title: 'Banking & KYC Suite',
+    description: 'Bank statement inspection with automated masking for PAN, Aadhaar, Account Numbers, and IFSC codes.',
+    category: 'banking',
+    icon: 'Building2',
+    color: 'from-emerald-700 to-slate-900',
+    badge: 'KYC / Bank',
+    popular: true,
+  },
+];
