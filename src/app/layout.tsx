@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen flex flex-col selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:text-indigo-300`}>
+      <body className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} font-sans antialiased min-h-screen w-full max-w-full overflow-x-hidden flex flex-col selection:bg-indigo-500/20 selection:text-indigo-600 dark:selection:text-indigo-300`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -133,8 +133,8 @@ export default function BankingModePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Banner */}
-      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-gradient-to-b from-slate-950 via-emerald-950/40 to-slate-950 text-white border-b border-emerald-900/40">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-gradient-to-b from-slate-950 via-emerald-950/40 to-slate-950 text-white border-b border-emerald-900/40 w-full">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-semibold w-fit mb-4">
             <Building2 className="w-3.5 h-3.5 text-emerald-400" />
             Banking & Financial Compliance Suite
@@ -165,8 +165,8 @@ export default function BankingModePage() {
       </section>
 
       {/* Upload Dropzone */}
-      <section className="py-8 bg-muted/20 border-b">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-8 bg-muted/20 border-b w-full">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
             onDragLeave={() => setIsDragging(false)}
@@ -198,8 +198,8 @@ export default function BankingModePage() {
       </section>
 
       {/* Banking Tool Grid */}
-      <section className="py-14 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="py-14 bg-background w-full">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-xl font-bold tracking-tight">Banking & KYC Redaction Actions</h2>
             <p className="text-xs text-muted-foreground mt-0.5">Select any action to load your file directly into the local workspace</p>

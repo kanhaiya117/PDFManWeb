@@ -134,8 +134,8 @@ export default function GovernmentModePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header Banner */}
-      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-gradient-to-b from-slate-900 to-indigo-950 text-white border-b border-indigo-900/50">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="pt-12 pb-10 md:pt-16 md:pb-14 bg-gradient-to-b from-slate-900 to-indigo-950 text-white border-b border-indigo-900/50 w-full">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold w-fit mb-4">
             <Landmark className="w-3.5 h-3.5 text-indigo-300" />
             Specialized Public Sector Portal
@@ -166,8 +166,8 @@ export default function GovernmentModePage() {
       </section>
 
       {/* Quick Launch Dropzone */}
-      <section className="py-8 bg-muted/20 border-b">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-8 bg-muted/20 border-b w-full">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
             onDragLeave={() => setIsDragging(false)}
@@ -199,8 +199,8 @@ export default function GovernmentModePage() {
       </section>
 
       {/* Dedicated Tool Grid */}
-      <section className="py-14 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="py-14 bg-background w-full">
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <h2 className="text-xl font-bold tracking-tight">Government Workflow Actions</h2>
             <p className="text-xs text-muted-foreground mt-0.5">Click any workflow to load your document directly into the tool</p>

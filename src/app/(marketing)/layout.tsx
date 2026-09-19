@@ -51,7 +51,7 @@ export default function MarketingLayout({
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen w-full max-w-full overflow-x-hidden bg-background text-foreground">
       {/* Top Notification / Trust Announcement Bar */}
       <div className="bg-indigo-950/95 text-indigo-200 text-xs py-1.5 px-4 text-center border-b border-indigo-900/50 hidden md:flex items-center justify-center gap-3">
         <span className="inline-flex items-center gap-1.5 font-medium">
@@ -64,66 +64,66 @@ export default function MarketingLayout({
         </Link>
       </div>
 
-      {/* Unique, Spacious, Premium Top Navigation */}
+      {/* Unique, Spacious, Premium Top Navigation — Fully Responsive without Overflow */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 shadow-2xs">
-        <div className="container mx-auto flex h-[72px] items-center justify-between px-4 md:px-6 lg:px-8 max-w-7xl">
+        <div className="w-full max-w-7xl mx-auto flex h-16 sm:h-[72px] items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
           {/* Brand Logo with Unique Shield Emblem */}
-          <div className="flex items-center gap-4 xl:gap-8 min-w-0 shrink-0">
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-600 to-cyan-500 text-white flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 group-hover:shadow-indigo-500/30 transition-all duration-200">
-                <Shield className="w-5 h-5 fill-white/25 stroke-[2.2]" />
+          <div className="flex items-center gap-3 xl:gap-6 min-w-0 shrink-0">
+            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-blue-600 to-cyan-500 text-white flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 group-hover:shadow-indigo-500/30 transition-all duration-200">
+                <Shield className="w-4.5 h-4.5 sm:w-5 sm:h-5 fill-white/25 stroke-[2.2]" />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-black text-xl tracking-tight leading-none text-foreground">
+                  <span className="font-black text-lg sm:text-xl tracking-tight leading-none text-foreground">
                     PDF<span className="text-indigo-600 dark:text-indigo-400">Man</span>
                   </span>
                   <span className="hidden sm:inline-block px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
                     LOCAL
                   </span>
                 </div>
-                <span className="text-[10px] text-muted-foreground font-semibold tracking-wide uppercase mt-0.5">
+                <span className="text-[10px] text-muted-foreground font-semibold tracking-wide uppercase mt-0.5 hidden xl:block">
                   Private &bull; Fast &bull; Secure
                 </span>
               </div>
             </Link>
 
-            {/* Quick Links Navigation with Comfortable Spacing - All in ONE line */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium whitespace-nowrap shrink-0">
+            {/* Quick Links Navigation with Responsive Spacing — Never Overflows */}
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-2 text-xs xl:text-sm font-medium whitespace-nowrap shrink-0">
               <Link 
                 href="/workspace?tool=merge-pdf" 
-                className="whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
+                className="whitespace-nowrap shrink-0 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
               >
                 Merge
               </Link>
               <Link 
                 href="/workspace?tool=split-pdf" 
-                className="whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
+                className="whitespace-nowrap shrink-0 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
               >
                 Split
               </Link>
               <Link 
                 href="/workspace?tool=compress-pdf" 
-                className="whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
+                className="whitespace-nowrap shrink-0 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
               >
                 Compress
               </Link>
               <Link 
                 href="/workspace?tool=sign-pdf" 
-                className="whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
+                className="whitespace-nowrap shrink-0 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
               >
                 Sign
               </Link>
               <Link 
                 href="/workspace?tool=edit-pdf" 
-                className="whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
+                className="whitespace-nowrap shrink-0 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
               >
-                Edit & Annotate
+                <span>Edit<span className="hidden xl:inline"> & Annotate</span></span>
               </Link>
 
               {/* Specialized Modes Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all cursor-pointer outline-none">
+                <DropdownMenuTrigger className="whitespace-nowrap shrink-0 inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all cursor-pointer outline-none">
                   <span className="whitespace-nowrap">Specialized Modes</span>
                   <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0" />
                 </DropdownMenuTrigger>
@@ -152,9 +152,9 @@ export default function MarketingLayout({
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              {/* All Tools Mega Dropdown — Cleaned of duplicates */}
+              {/* All Tools Mega Dropdown */}
               <DropdownMenu>
-                <DropdownMenuTrigger className="whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all cursor-pointer outline-none">
+                <DropdownMenuTrigger className="whitespace-nowrap shrink-0 inline-flex items-center gap-1 xl:gap-1.5 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all cursor-pointer outline-none">
                   <span className="whitespace-nowrap">All Tools</span>
                   <ChevronDown className="w-3.5 h-3.5 opacity-70 shrink-0" />
                 </DropdownMenuTrigger>
@@ -244,41 +244,31 @@ export default function MarketingLayout({
 
               <Link 
                 href="/pricing" 
-                className="whitespace-nowrap shrink-0 px-2.5 xl:px-3 py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
+                className="whitespace-nowrap shrink-0 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted/70 transition-all"
               >
                 Pricing
               </Link>
             </nav>
           </div>
 
-          {/* Action CTAs — Generous, Uncompacted Buttons with 2-3px increased padding */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            {/* Mobile Search Button (< sm) */}
+          {/* Action CTAs — Responsive, Never Overflows */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 xl:gap-3 shrink-0">
+            {/* Search Tools Button (compact icon on mobile/lg, full pill on xl+) */}
             <button
               onClick={openCommandPalette}
-              className="flex sm:hidden items-center justify-center w-10 h-10 rounded-xl text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/80 transition-all cursor-pointer"
-              aria-label="Search tools"
-              title="Search tools"
-            >
-              <Search className="w-4 h-4" />
-            </button>
-
-            {/* Desktop Search Tools Button (sm+) */}
-            <button
-              onClick={openCommandPalette}
-              className="hidden sm:flex items-center gap-2.5 h-10 sm:h-10.5 px-4 py-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/80 rounded-xl transition-all shadow-2xs cursor-pointer whitespace-nowrap shrink-0"
+              className="flex items-center justify-center gap-2 h-9 sm:h-10 xl:h-10.5 px-2.5 sm:px-3 xl:px-4 py-2 text-xs font-semibold text-muted-foreground hover:text-foreground bg-muted/60 hover:bg-muted border border-border/80 rounded-xl transition-all shadow-2xs cursor-pointer whitespace-nowrap shrink-0"
               title="Command Palette (Ctrl + K)"
             >
               <Command className="w-3.5 h-3.5" />
-              <span>Search tools</span>
-              <kbd className="text-[10px] bg-background border px-1.5 py-0.5 rounded-md font-mono">⌘K</kbd>
+              <span className="hidden xl:inline">Search tools</span>
+              <kbd className="hidden xl:inline-block text-[10px] bg-background border px-1.5 py-0.5 rounded-md font-mono">⌘K</kbd>
             </button>
 
             <ThemeToggle />
 
-            {/* Prominent Workspace Button with increased padding */}
+            {/* Prominent Workspace Button */}
             <Link href="/workspace" className="hidden sm:block shrink-0">
-              <Button size="default" className="h-10 sm:h-10.5 px-6 sm:px-7 py-2.5 rounded-full text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] transition-all cursor-pointer whitespace-nowrap">
+              <Button size="default" className="h-9 sm:h-10 xl:h-10.5 px-3.5 sm:px-5 xl:px-7 py-2 text-xs sm:text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] transition-all cursor-pointer whitespace-nowrap">
                 Open Workspace
               </Button>
             </Link>
@@ -286,7 +276,7 @@ export default function MarketingLayout({
             {/* Mobile Hamburger Toggle Button (< lg) */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="flex lg:hidden items-center justify-center w-10 h-10 rounded-xl text-foreground hover:bg-muted border border-border/80 transition-colors cursor-pointer"
+              className="flex lg:hidden items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl text-foreground hover:bg-muted border border-border/80 transition-colors cursor-pointer shrink-0"
               aria-label="Toggle Navigation Menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -499,7 +489,7 @@ export default function MarketingLayout({
 
       {/* 12. COMPREHENSIVE FOOTER (Section 54 from Spec) */}
       <footer className="border-t bg-muted/30 text-muted-foreground text-xs py-14">
-        <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
             {/* Brand Column */}
             <div className="lg:col-span-2 space-y-4">

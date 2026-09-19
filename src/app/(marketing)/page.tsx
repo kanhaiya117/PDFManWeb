@@ -81,10 +81,10 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* 1. HERO SECTION (Small refined title, Original Dropzone) */}
-      <section className="relative overflow-hidden pt-8 pb-10 md:pt-12 md:pb-12 bg-gradient-to-b from-indigo-500/5 via-background to-background border-b">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-3">
+      {/* 1. HERO SECTION (Fluid Responsive, Proportional Height & Width) */}
+      <section className="relative overflow-hidden pt-6 pb-8 sm:pt-8 sm:pb-10 md:pt-10 md:pb-12 bg-gradient-to-b from-indigo-500/5 via-background to-background border-b w-full">
+        <div className="w-full max-w-5xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
             100% In-Browser & Local-First Processing
           </div>
@@ -97,57 +97,59 @@ export default function HomePage() {
             </span>
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-normal leading-relaxed">
+          <p className="mt-2.5 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-normal leading-relaxed">
             Read, edit, annotate, sign, and manage your PDFs directly in your browser. No file uploads. No privacy compromises.
           </p>
 
-          {/* Primary and Secondary Action Buttons */}
-          <div className="mt-5 flex items-center justify-center gap-3 flex-wrap">
-            <Button 
-              size="default" 
-              onClick={() => router.push('/workspace')} 
-              className="h-11 sm:h-12 px-7 sm:px-8 py-3 rounded-xl text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md hover:shadow-indigo-500/25 transition-all cursor-pointer"
-            >
-              Open PDF Document
-            </Button>
-            <a href="#tools">
+          {/* Primary and Secondary Action Buttons — Exactly matching the width of the dropzone below */}
+          <div className="mt-6 max-w-2xl mx-auto w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 w-full">
               <Button 
-                variant="outline" 
                 size="default" 
-                className="h-11 sm:h-12 px-6 sm:px-7 py-3 rounded-xl text-sm font-semibold border-muted-foreground/30 hover:bg-muted/80 cursor-pointer transition-all"
+                onClick={() => router.push('/workspace')} 
+                className="w-full h-11 sm:h-12 px-2 rounded-xl text-xs sm:text-sm font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-md hover:shadow-indigo-500/25 transition-all cursor-pointer whitespace-nowrap justify-center"
               >
-                Explore All Tools
+                Open PDF Document
               </Button>
-            </a>
-            <Link href="/government">
-              <Button 
-                variant="outline" 
-                size="default" 
-                className="h-11 sm:h-12 px-5 sm:px-6 py-3 rounded-xl text-sm font-semibold border-indigo-500/30 hover:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:border-indigo-500/50 cursor-pointer transition-all flex items-center gap-2 shadow-2xs"
-              >
-                <Landmark className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
-                <span>Government Tools</span>
-              </Button>
-            </Link>
-            <Link href="/banking">
-              <Button 
-                variant="outline" 
-                size="default" 
-                className="h-11 sm:h-12 px-5 sm:px-6 py-3 rounded-xl text-sm font-semibold border-emerald-500/30 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:border-emerald-500/50 cursor-pointer transition-all flex items-center gap-2 shadow-2xs"
-              >
-                <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span>Banking & KYC</span>
-              </Button>
-            </Link>
+              <a href="#tools" className="w-full block">
+                <Button 
+                  variant="outline" 
+                  size="default" 
+                  className="w-full h-11 sm:h-12 px-2 rounded-xl text-xs sm:text-sm font-semibold border-muted-foreground/30 hover:bg-muted/80 cursor-pointer transition-all whitespace-nowrap justify-center"
+                >
+                  Explore All Tools
+                </Button>
+              </a>
+              <Link href="/government" className="w-full block">
+                <Button 
+                  variant="outline" 
+                  size="default" 
+                  className="w-full h-11 sm:h-12 px-2 rounded-xl text-xs sm:text-sm font-semibold border-indigo-500/30 hover:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 hover:border-indigo-500/50 cursor-pointer transition-all flex items-center justify-center gap-1.5 shadow-2xs whitespace-nowrap"
+                >
+                  <Landmark className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+                  <span>Government Tools</span>
+                </Button>
+              </Link>
+              <Link href="/banking" className="w-full block">
+                <Button 
+                  variant="outline" 
+                  size="default" 
+                  className="w-full h-11 sm:h-12 px-2 rounded-xl text-xs sm:text-sm font-semibold border-emerald-500/30 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:border-emerald-500/50 cursor-pointer transition-all flex items-center justify-center gap-1.5 shadow-2xs whitespace-nowrap"
+                >
+                  <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                  <span>Banking & KYC</span>
+                </Button>
+              </Link>
+            </div>
           </div>
 
-          {/* 2. ORIGINAL MAIN PDF UPLOAD DROPZONE */}
-          <div className="mt-8 max-w-2xl mx-auto">
+          {/* 2. ORIGINAL MAIN PDF UPLOAD DROPZONE — Identical max-w-2xl container */}
+          <div className="mt-4 max-w-2xl mx-auto w-full">
             <div
               onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
               onDragLeave={() => setIsDragging(false)}
               onDrop={handleDrop}
-              className={`relative border-2 border-dashed rounded-3xl p-8 md:p-12 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg ${
+              className={`relative border-2 border-dashed rounded-3xl p-6 sm:p-8 md:p-10 transition-all duration-200 cursor-pointer shadow-sm hover:shadow-lg ${
                 isDragging 
                   ? 'border-indigo-600 bg-indigo-500/10 scale-[1.01]' 
                   : 'border-border/80 hover:border-indigo-500/60 bg-card'
@@ -162,8 +164,8 @@ export default function HomePage() {
               />
               
               <div className="flex flex-col items-center justify-center text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center shadow-lg text-white mb-4 transform transition-transform group-hover:scale-105">
-                  <Upload className="w-8 h-8" />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center shadow-lg text-white mb-3.5 transform transition-transform group-hover:scale-105">
+                  <Upload className="w-7 h-7 sm:w-8 sm:h-8" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-1 tracking-tight text-foreground">
                   Drop your PDF here
@@ -176,7 +178,7 @@ export default function HomePage() {
                   Choose PDF
                 </Button>
 
-                <div className="mt-5 flex items-center gap-2 text-xs text-muted-foreground font-medium">
+                <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground font-medium">
                   <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   <span>Your file stays on your device whenever possible</span>
                 </div>
@@ -187,8 +189,8 @@ export default function HomePage() {
       </section>
 
       {/* 2. UNIFIED PDF TOOL DIRECTORY (NO DUPLICATE TILES) */}
-      <section id="tools" className="py-10 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section id="tools" className="py-10 bg-background w-full">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <h2 className="text-2xl font-extrabold tracking-tight">Specialized Document Tools</h2>
@@ -272,8 +274,8 @@ export default function HomePage() {
       </section>
 
       {/* 3. HOW PDFMAN WORKS (Local-First Architecture) */}
-      <section className="py-12 bg-card border-y">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-12 bg-card border-y w-full">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-2">
               <Zap className="w-3.5 h-3.5" /> Architecture Principle
@@ -317,8 +319,8 @@ export default function HomePage() {
       </section>
 
       {/* 4. PRIVACY-FIRST SECTION */}
-      <section className="py-12 bg-muted/10 border-b">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-12 bg-muted/10 border-b w-full">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold mb-3">
@@ -376,8 +378,8 @@ export default function HomePage() {
       </section>
 
       {/* 5. MULTI-LAYER SECURITY SECTION */}
-      <section className="py-12 bg-card border-b">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-12 bg-card border-b w-full">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-semibold mb-2">
               <Lock className="w-3.5 h-3.5" /> Enterprise Grade
@@ -417,8 +419,8 @@ export default function HomePage() {
       </section>
 
       {/* 6. GOVERNMENT & BANKING SPECIALIZED SUITES */}
-      <section id="sectors" className="py-12 bg-muted/20 border-b scroll-mt-16">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section id="sectors" className="py-12 bg-muted/20 border-b scroll-mt-16 w-full">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8">
             <h2 className="text-2xl font-extrabold tracking-tight">Specialized Sector Workflows</h2>
             <p className="text-muted-foreground text-xs mt-1">
@@ -491,8 +493,8 @@ export default function HomePage() {
       </section>
 
       {/* 7. PERFORMANCE STATS */}
-      <section className="py-10 border-b bg-muted/10">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-10 border-b bg-muted/10 w-full">
+        <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="p-3.5 bg-card border rounded-xl">
               <Zap className="w-5 h-5 text-amber-500 mx-auto mb-1.5" />
@@ -519,8 +521,8 @@ export default function HomePage() {
       </section>
 
       {/* 8. FAQ SECTION */}
-      <section className="py-12 bg-card">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="py-12 bg-card w-full">
+        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
             <p className="text-muted-foreground text-xs mt-1">Answers regarding privacy, performance, and compliance</p>
